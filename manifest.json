@@ -1,17 +1,19 @@
 {
-    "name": "FB-Slap",
-    "description" :"Adds a 'slap' link to facebook status posts",
+    "name": "BTC-e plugin",
+    "description" :"Consolidates trades on BTC-e",
     "version": "0.1",
     "manifest_version": 2,
     "permissions": [
-       "tabs",
-       "*://*.facebook.com/*"
+       "activeTab"
       ],
-    "content_scripts": [
-      {
-        "matches": ["*://*.facebook.com/*"],
-        "js": ["injectslaps.js"]
-      }
-    ],
-    "icons": { "128": "icon128.png" }
+    "background": {
+       "scripts": ["background.js"],
+       "persistent": false
+    },
+    "icons": {
+      "128": "icon128.png"
+    },
+    "browser_action": {
+       "default_title": "Beregn løbende saldo!"
+    }
 }
